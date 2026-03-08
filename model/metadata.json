@@ -1,0 +1,34 @@
+{
+  "raw_dir": "C:\\Users\\JOREN ABEGAIL\\Synapsee_DataPipeline\\data\\raw",
+  "seq_len": 120,
+  "stride": 5,
+  "features": [
+    "yaw",
+    "pitch",
+    "roll",
+    "yaw_rate",
+    "pitch_rate",
+    "roll_rate",
+    "lx",
+    "ly",
+    "lz",
+    "l_speed",
+    "rx",
+    "ry",
+    "rz",
+    "r_speed",
+    "voice_rms",
+    "vad_prob"
+  ],
+  "target_total": 30000,
+  "split": {
+    "train": 20000,
+    "val": 5000,
+    "test": 5000
+  },
+  "label_map": {
+    "CLEAN": 0,
+    "CHEAT*": 1
+  },
+  "seed": 42
+}
