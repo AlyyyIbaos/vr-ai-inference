@@ -103,9 +103,11 @@ def load_assets():
 
     print("Loaded model:", MODEL_PATH)
     print("Loaded scaler:", SCALER_PATH)
+    print("SEQ_LEN:", SEQ_LEN)
+    print("N_FEATURES:", N_FEATURES)
+    print("THRESHOLD:", DEFAULT_THRESHOLD)
     print("USE_CAT:", USE_CAT)
     print("Inference server started")
-
 
 
 
@@ -195,6 +197,14 @@ def infer_window(req: InferWindowRequest):
     model_latency_ms = (t2 - t1) * 1000.0
     total_latency_ms = (t2 - t0) * 1000.0
 
+    print(
+    "RESULT | session=", req.session_id,
+    "prob=", prob,
+    "cat_active=", cat_active,
+    "transition=", cat_transition,
+    "model_latency_ms=", model_latency_ms,
+    "total_latency_ms=", total_latency_ms
+    )
 
     return InferWindowResponse(
         session_id=req.session_id,
